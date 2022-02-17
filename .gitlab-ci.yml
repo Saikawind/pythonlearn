@@ -15,8 +15,7 @@
 
 stages:          # List of stages for jobs, and their order of execution test
   - build
-  - test
-  - deploy
+
 
 default:
 before_script:
@@ -32,20 +31,3 @@ build-job:       # This job runs in the build stage, which runs first.
     - echo "Compiling the code..."
     - echo "Compile complete."
 
-unit-test-job:   # This job runs in the test stage.
-  tags:
-    - sss
-  stage: test    # It only starts when the job in the build stage completes successfully.
-  script:
-    - echo "Running unit tests... This will take about 60 seconds."
-    - sleep 60
-    - echo "Code coverage is 90%"
-
-
-deploy-job:      # This job runs in the deploy stage.
-  tags:
-    - sss
-  stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
-  script:
-    - echo "Deploying application..."
-    - echo "Application successfully deployed."
