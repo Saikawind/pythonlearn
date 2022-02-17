@@ -18,6 +18,12 @@ stages:          # List of stages for jobs, and their order of execution
   - test
   - deploy
 
+default:
+before_script:
+  - echo 'run some command before'
+after_script:
+  - echo 'run some command '
+
 build-job:       # This job runs in the build stage, which runs first.
   tags:
     - sss
