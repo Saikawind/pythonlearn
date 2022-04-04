@@ -34,4 +34,4 @@ Unite-test2-job:
     - sss
   stage: test
   script:
-    - echo "王诗愉真帅啊"
+    - echo "王诗愉真帅啊d"
