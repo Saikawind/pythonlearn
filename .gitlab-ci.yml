@@ -4,16 +4,16 @@ stages:          # List of stages for jobs, and their order of execution
   - deploy
 
 build-job:       # This job runs in the build stage, which runs first.
-  tags:
-    - sss
+  # tags:
+  #   - sss
   stage: build
   script:
     - echo "Compiling the code..."
     - echo "Compile complete."
 
 unit-test-job:   # This job runs in the test stage.
-  tags:
-    - sss
+  # tags:
+  #   - sss
   stage: test    # It only starts when the job in the build stage completes successfully.
   script:
     - echo "Running unit tests... This will take about 60 seconds."
@@ -21,8 +21,8 @@ unit-test-job:   # This job runs in the test stage.
 
 
 deploy-job:      # This job runs in the deploy stage.
-  tags:
-    - sss
+  # tags:
+  #   - sss
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
   script:
     - echo "Deploying application..."
@@ -30,8 +30,8 @@ deploy-job:      # This job runs in the deploy stage.
 
 
 Unite-test2-job:
-  tags:
-    - sss
+  # tags:
+  #   - sss
   stage: test
   script:
     - echo "王诗愉真帅啊d"
